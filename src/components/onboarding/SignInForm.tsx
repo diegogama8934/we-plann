@@ -16,7 +16,7 @@ export function SignInForm() {
 
   return (
     <form className="flex flex-col items-center gap-6 w-[800px]">
-      <h2 className="text-center text-2xl font-bold">Registra las cuentas</h2>
+      <h2 className="text-center text-2xl font-bold">Registra tu cuenta</h2>
       <fieldset className="flex flex-wrap items-center gap-6">
         <Input
           className="w-96"
