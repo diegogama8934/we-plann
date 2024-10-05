@@ -9,5 +9,5 @@ export const metadata:Metadata = {
 export default function RedirectPage(){
   
 
-  redirect("/home");
+  redirect("dashboard/home");
 }

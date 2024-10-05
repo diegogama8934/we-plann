@@ -1,14 +1,13 @@
-
 interface Props {
   children:React.ReactNode
   type?: "submit" | "button"
   isLoading?: boolean
   onClick?: () => void
   className?: string
-  variant: "primary" | "secondary" | "tertiary"
+  variant?: "primary" | "secondary" | "tertiary"
 }
 
-export function Button({children, type="button", isLoading=false, onClick, className, variant}:Props){
+export function Button({children, type="button", isLoading=false, onClick, className, variant="primary"}:Props){
 
   let variantClassName:string="";
 

@@ -4,7 +4,7 @@ interface Props {
   value?: string
   onValueChange?: (e:React.ChangeEvent<HTMLInputElement>) => void
   name?: string
-  className:string
+  className?:string
   type?: "text" | "password" | "number"
 }
 
