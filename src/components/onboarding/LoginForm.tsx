@@ -1,5 +1,5 @@
 "use client";
-import { Input, Button } from "@/components";
+import { Input, Button } from "@/ui";
 import { useState } from "react";
 
 
