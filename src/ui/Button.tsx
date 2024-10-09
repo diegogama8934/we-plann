@@ -3,13 +3,14 @@ interface Props {
   endIcon?: React.ReactNode
   startIcon?: React.ReactNode
   isLoading?: boolean
+  isIconOnly? :boolean
   className?: string
   type?: "submit" | "button"
   variant?: "primary" | "secondary" | "tertiary"
   onClick?: () => void
 }
 
-export function Button({ children, type = "button", isLoading = false, onClick, className, variant = "primary", endIcon, startIcon }: Props) {
+export function Button({ children, type = "button", isLoading = false, onClick, className, variant = "primary", endIcon, startIcon, isIconOnly=false }: Props) {
 
   let variantClassName: string = "";
 
@@ -28,12 +29,12 @@ export function Button({ children, type = "button", isLoading = false, onClick, 
   return (
     <button
       type={type}
-      className={`${variantClassName} ${className} flex gap-4 px-6 py-2`}
+      className={`${variantClassName} ${className} ${isIconOnly ? "p-2" : "px-4 py-2"} flex gap-4`}
       onClick={onClick}
     >
-      {startIcon}
+      {!isIconOnly && startIcon }
       <span>{isLoading ? "Loading..." : children}</span>
-      {endIcon}
+      {!isIconOnly && endIcon}
     </button>
   );
 }
