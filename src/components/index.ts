@@ -6,3 +6,4 @@ export { SignInForm } from "@/components/onboarding/SignInForm";
 export { ChartsControls } from "@/components/platform/ChartsControls";
 export { ActiveNavBarLink } from "@/components/platform/ActiveNavBarLink";
 export { ChartsGrid } from "@/components/platform/ChartsGrid";
+export { Chart } from "@/components/platform/Chart";

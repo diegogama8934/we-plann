@@ -1,16 +1,32 @@
+import Link from "next/link"
+
 interface Props {
   children: React.ReactNode
-  endIcon?: React.ReactNode
-  startIcon?: React.ReactNode
-  isLoading?: boolean
-  isIconOnly? :boolean
   className?: string
-  type?: "submit" | "button"
-  variant?: "primary" | "secondary" | "tertiary"
+  endIcon?: React.ReactNode
+  href?: string
+  isIconOnly?: boolean
+  isLoading?: boolean
   onClick?: () => void
+  startIcon?: React.ReactNode
+  type?: "submit" | "button"
+  useAsLink?: boolean
+  variant?: "primary" | "secondary" | "tertiary"
 }
 
-export function Button({ children, type = "button", isLoading = false, onClick, className, variant = "primary", endIcon, startIcon, isIconOnly=false }: Props) {
+export function Button({
+  children,
+  className,
+  endIcon,
+  href,
+  isIconOnly = false,
+  isLoading = false,
+  onClick,
+  startIcon,
+  type = "button",
+  useAsLink = false,
+  variant = "primary",
+}: Props) {
 
   let variantClassName: string = "";
 
@@ -26,13 +42,28 @@ export function Button({ children, type = "button", isLoading = false, onClick, 
       break;
   }
 
+  if (useAsLink) {
+    return (
+      <Link
+        href={href!}
+        type={type}
+        className={`${variantClassName} ${className} ${isIconOnly ? "p-2" : "px-4 py-2"} flex gap-4`}
+        onClick={onClick}
+      >
+        {!isIconOnly && startIcon}
+        <span>{isLoading ? "Loading..." : children}</span>
+        {!isIconOnly && endIcon}
+      </Link>
+    );
+  }
+
   return (
     <button
       type={type}
       className={`${variantClassName} ${className} ${isIconOnly ? "p-2" : "px-4 py-2"} flex gap-4`}
       onClick={onClick}
     >
-      {!isIconOnly && startIcon }
+      {!isIconOnly && startIcon}
       <span>{isLoading ? "Loading..." : children}</span>
       {!isIconOnly && endIcon}
     </button>
