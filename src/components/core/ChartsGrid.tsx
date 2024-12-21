@@ -1,17 +1,19 @@
 "use client";
 import { ChartsControls, Chart } from "@/components";
+import { useState } from "react";
 
 export function ChartsGrid() {
-
-  
+  const [visibleCharts, setVisibleCharts] = useState();
 
   return (
     <>
 
-      <ChartsControls />
+      <ChartsControls
+        visibleCharts={visibleCharts}
+      />
 
       <div className="grid grid-cols-2 gap-8">
-        
+
         <Chart />
         <Chart />
         <Chart />
