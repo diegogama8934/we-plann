@@ -1,5 +1,5 @@
 export async function getGeneralData(){
 
 
-  return;
+  return [""];
 }

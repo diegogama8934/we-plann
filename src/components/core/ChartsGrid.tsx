@@ -6,7 +6,7 @@ import { ChartsGrid as ChartsGridInterface } from "@/interfaces";
 
 export function ChartsGrid({ initialChartsStructure }: ChartsGridInterface) {
 
-  const [charts, setCharts] = useState(initialChartsStructure);
+  const [charts] = useState(initialChartsStructure);
 
   return (
     <>
