@@ -6,15 +6,15 @@ export const dashboardPages: ActiveNavBarLinkProps[] = [
     name: "Inicio"
   },
   {
-    href: "ingresos",
+    href: "earnings",
     name: "Ingresos"
   },
   {
-    href: "gastos",
+    href: "bills",
     name: "Gastos"
   },
   {
-    href: "habitos",
+    href: "habits",
     name: "Hábitos"
   },
 ]

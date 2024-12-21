@@ -16,7 +16,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
         <div className="flex gap-4">
           <Button variant="tertiary">Opciones</Button>
-          <Button>Ver mi perfil</Button>
+          <Button variant="tertiary">Ver mi perfil</Button>
         </div>
       </header>
 

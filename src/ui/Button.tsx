@@ -12,6 +12,7 @@ interface Props {
   type?: "submit" | "button"
   useAsLink?: boolean
   variant?: "primary" | "secondary" | "tertiary"
+  color?: "brand" | "warning" | "danger"
 }
 
 export function Button({
@@ -26,6 +27,7 @@ export function Button({
   type = "button",
   useAsLink = false,
   variant = "primary",
+  // color = "brand"
 }: Props) {
 
   let variantClassName: string = "";
@@ -38,7 +40,7 @@ export function Button({
       variantClassName = "border-zinc-200 border text-zinc-600 rounded-md shadow-sm transition-all";
       break;
     case "tertiary":
-      variantClassName = "text-zinc-600 hover:bg-zinc-200 rounded-md transition-all";
+      variantClassName = "text-zinc-600 hover:bg-zinc-100 rounded-md transition-all";
       break;
   }
 
@@ -47,7 +49,7 @@ export function Button({
       <Link
         href={href!}
         type={type}
-        className={`${variantClassName} ${className} ${isIconOnly ? "p-2" : "px-4 py-2"} flex gap-4`}
+        className={`${variantClassName} ${className} ${isIconOnly ? "p-1" : "px-4 py-2"} flex gap-4`}
         onClick={onClick}
       >
         {!isIconOnly && startIcon}
@@ -60,7 +62,7 @@ export function Button({
   return (
     <button
       type={type}
-      className={`${variantClassName} ${className} ${isIconOnly ? "p-2" : "px-4 py-2"} flex gap-4`}
+      className={`${variantClassName} ${className} ${isIconOnly ? "p-1" : "px-4 py-2"} flex gap-4`}
       onClick={onClick}
     >
       {!isIconOnly && startIcon}
