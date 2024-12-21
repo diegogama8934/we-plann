@@ -1,23 +1,38 @@
 "use client";
+import React from "react";
 import { ChartsControls, Chart } from "@/components";
 import { useState } from "react";
+import { ChartsGrid as ChartsGridInterface } from "@/interfaces";
 
-export function ChartsGrid() {
-  const [visibleCharts, setVisibleCharts] = useState();
+export function ChartsGrid({ initialChartsStructure }: ChartsGridInterface) {
+
+  const [charts, setCharts] = useState(initialChartsStructure);
 
   return (
     <>
 
       <ChartsControls
-        visibleCharts={visibleCharts}
+        visibleCharts={charts}
       />
 
       <div className="grid grid-cols-2 gap-8">
 
-        <Chart />
-        <Chart />
-        <Chart />
-        <Chart />
+        {
+          charts.map((chart) => (
+            <React.Fragment key={chart.period}>
+              {
+                chart.visible
+                  ? (
+                    <Chart
+                      balance={chart.balance}
+                      period={chart.period}
+                    />
+                  )
+                  : (<></>)
+              }
+            </React.Fragment>
+          ))
+        }
 
         {/* <div className="flex flex-col gap-4 p-8 border border-zinc-200 rounded-xl">
           <div className="flex justify-between">

@@ -1,19 +1,9 @@
 import { Button } from "@/ui";
 import { AiOutlineEye, AiOutlineCalendar, AiOutlineBarChart } from "react-icons/ai";
+import { ChartsControls as ChartsControlsInterface } from "@/interfaces";
 
-type Period = "daily" | "weekly" | "monthly" | "yearly";
 
-interface VisibleChart {
-  period: Period
-  visible: boolean
-  data: []
-}
-
-interface Props {
-  visibleCharts: VisibleChart[]
-}
-
-export function ChartsControls({ visibleCharts }: Props) {
+export function ChartsControls({ visibleCharts }: ChartsControlsInterface) {
 
   console.log(visibleCharts);
 

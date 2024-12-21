@@ -1,4 +1,4 @@
-import { ActiveNavBarLinkProps, ChartsGridOptions, PageLink } from "@/interfaces";
+import { ActiveNavBarLinkProps, ChartsGridOptions, ChartsStructure, PageLink } from "@/interfaces";
 
 export const dashboardPages: ActiveNavBarLinkProps[] = [
   {
@@ -46,7 +46,7 @@ export const chartsGridOptions: ChartsGridOptions[] = [
   }
 ];
 
-export const landingPages:PageLink[] = [
+export const landingPages: PageLink[] = [
   {
     href: "about",
     name: "Acerca de"
@@ -61,4 +61,29 @@ export const landingPages:PageLink[] = [
   },
 ];
 
-export const fakeGeneralData = []
+export const fakeChartsData: ChartsStructure = [
+  {
+    period: "Hoy",
+    data: [],
+    visible: true,
+    balance: 70
+  },
+  {
+    period: "Esta semana",
+    data: [],
+    visible: true,
+    balance: -380
+  },
+  {
+    period: "Este mes",
+    data: [],
+    visible: true,
+    balance: 948
+  },
+  {
+    period: "Este año",
+    data: [],
+    visible: true,
+    balance: 3000
+  }
+];

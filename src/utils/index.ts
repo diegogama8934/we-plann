@@ -1,15 +1,12 @@
-// Tremor Cx
-export { cx } from "@/utils/tremorCx";
+// Charts
+export { formatGeneralDataToChartsData } from "@/utils/formatGeneralDataToChartsData";
 
-// Tremor Utils for charts
-export { AvailableChartColors} from "@/utils/chartUtils";
-export { chartColors } from "@/utils/chartUtils";
-
-export { hasOnlyOneValueForKey } from "@/utils/chartUtils";
-export { constructCategoryColors } from "@/utils/chartUtils";
-export { getColorClassName } from "@/utils/chartUtils";
-export { getYAxisDomain } from "@/utils/chartUtils";
-
-// Tremor charts types for utils
-export type { AvailableChartColorsKeys, ColorUtility } from "@/utils/chartUtils";
-
+// Tremor
+export { cx } from "@/utils/tremor/tremorCx";
+export { AvailableChartColors} from "@/utils/tremor/chartUtils";
+export { chartColors } from "@/utils/tremor/chartUtils";
+export { hasOnlyOneValueForKey } from "@/utils/tremor/chartUtils";
+export { constructCategoryColors } from "@/utils/tremor/chartUtils";
+export { getColorClassName } from "@/utils/tremor/chartUtils";
+export { getYAxisDomain } from "@/utils/tremor/chartUtils";
+export type { AvailableChartColorsKeys, ColorUtility } from "@/utils/tremor/chartUtils";
