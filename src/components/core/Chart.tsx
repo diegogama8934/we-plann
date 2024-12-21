@@ -1,6 +1,7 @@
 import { AiOutlineMore } from "react-icons/ai";
 import { Button } from "@/ui";
 import { AreaChart } from "../tremorChart/Chart";
+import type { Period } from "@/interfaces";
 
 const chartdata = [
   {
@@ -65,16 +66,22 @@ const chartdata = [
   },
 ]
 
+interface Props {
+  balance: number
+  period: Period
+}
 
-export function Chart() {
+export function Chart({ balance, period }: Props) {
 
 
   return (
     <div className="flex flex-col gap-4 p-8 border border-zinc-200 rounded-xl">
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-4">
-          <h2 className="font-bold">Hoy</h2>
-          <span className="text-green-700 font-bold">+ $73</span>
+          <h2 className="font-bold">{period}</h2>
+          <span className={`${balance >= 0 ? "text-green-700" : "text-red-700"} font-bold`}>
+            {balance >= 0 ? `+ $${balance}` : `- $${balance + (-2 * balance)}`}
+          </span>
         </div>
         <div className="flex gap-4 items-center">
           <span className="text-zinc-400">Campo extra</span>
