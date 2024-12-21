@@ -1,6 +1,6 @@
-import { ActiveNavBarLinkProps, ChartsGridOptions } from "@/interfaces";
+import { ActiveNavBarLinkProps, ChartsGridOptions, PageLink } from "@/interfaces";
 
-export const dashboardPages:ActiveNavBarLinkProps[] = [
+export const dashboardPages: ActiveNavBarLinkProps[] = [
   {
     href: "home",
     name: "Inicio"
@@ -19,7 +19,7 @@ export const dashboardPages:ActiveNavBarLinkProps[] = [
   },
 ]
 
-export const chartsGridOptions:ChartsGridOptions[] = [
+export const chartsGridOptions: ChartsGridOptions[] = [
   {
     isVisible: true,
     title: "Hoy",
@@ -44,4 +44,19 @@ export const chartsGridOptions:ChartsGridOptions[] = [
     dateReference: "",
     difference: 3513
   }
+];
+
+export const landingPages:PageLink[] = [
+  {
+    href: "about",
+    name: "Acerca de"
+  },
+  {
+    href: "login",
+    name: "Iniciar sesión"
+  },
+  {
+    href: "signup",
+    name: "Crea tu cuenta"
+  },
 ];

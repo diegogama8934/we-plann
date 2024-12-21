@@ -1,5 +1,5 @@
 export interface ActiveNavBarLinkProps {
-  name:string
+  name: string
   href: string
 }
 
@@ -8,4 +8,9 @@ export interface ChartsGridOptions {
   title: string
   difference: number
   dateReference: string
+}
+
+export interface PageLink {
+  href: string
+  name: string
 }
