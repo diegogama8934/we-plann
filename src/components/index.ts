@@ -5,8 +5,8 @@ export { LandingNavbar } from "@/components/onboarding/LandingNavbar";
 export { ActiveLandingLink } from "@/components/onboarding/ActiveLandingLink";
 
 // Platform
-export { ChartsControls } from "@/components/platform/ChartsControls";
-export { ActiveNavBarLink } from "@/components/platform/ActiveNavBarLink";
-export { ChartsGrid } from "@/components/platform/ChartsGrid";
-export { Chart } from "@/components/platform/Chart";
-export { HomeQuickActions } from "@/components/platform/HomeQuickActions";
+export { ChartsControls } from "@/components/core/ChartsControls";
+export { ActiveNavBarLink } from "@/components/core/ActiveNavBarLink";
+export { ChartsGrid } from "@/components/core/ChartsGrid";
+export { Chart } from "@/components/core/Chart";
+export { HomeQuickActions } from "@/components/core/HomeQuickActions";

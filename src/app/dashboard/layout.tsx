@@ -1,5 +1,5 @@
 import { dashboardPages } from "@/constants";
-import { ActiveNavBarLink } from "@/components/platform/ActiveNavBarLink";
+import { ActiveNavBarLink } from "@/components/core/ActiveNavBarLink";
 import { Button } from "@/ui";
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {

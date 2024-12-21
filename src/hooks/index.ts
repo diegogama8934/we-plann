@@ -1,0 +1,1 @@
+export { useOnWindowResize } from "@/hooks/useOnWindowResize";
