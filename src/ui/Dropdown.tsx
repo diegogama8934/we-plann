@@ -13,8 +13,9 @@ export function Dropdown({ isOpen, trigger, options }: Props) {
 
       {trigger}
 
+      
       {isOpen && (
-        <div className="absolute w-full p-1 rounded-lg top-12 flex flex-col gap-1 border-zinc-100 border shadow-sm bg-white">
+        <div className="absolute w-full p-1 rounded-lg top-12 flex flex-col gap-1 border-zinc-100 border shadow bg-white">
           {options.map((opt, i, arr) => (
             <>
               {opt}
