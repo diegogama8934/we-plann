@@ -17,7 +17,7 @@ export const dashboardPages: ActiveNavBarLinkProps[] = [
     href: "habits",
     name: "Hábitos"
   },
-]
+];
 
 export const chartsGridOptions: ChartsGridOptions[] = [
   {

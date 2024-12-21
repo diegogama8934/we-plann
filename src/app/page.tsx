@@ -10,8 +10,8 @@ export default function Home() {
   return (
     <div className=" h-screen flex flex-col items-center gap-12">
       <LandingNavbar />
-      <h1 className="text-4xl font-bold">We Plan</h1>
-      <h2 className="text-center leading-loose text-xl">El espacio donde las parejas pueden planear, administrar y organizar sus finanzas.</h2>
+      <h1 className="text-5xl font-bold">We Plan</h1>
+      <h2 className="text-center leading-loose text-xl">El espacio donde las familias pueden planear, administrar y organizar sus finanzas.</h2>
     </div>
   );
 }
