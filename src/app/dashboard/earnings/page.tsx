@@ -3,10 +3,12 @@
 import { Button, Input, InputDate, Modal } from "@/ui";
 import { AiOutlinePlus } from "react-icons/ai";
 import { useState } from "react";
+import { useModal } from "@/hooks/useModal";
 
 export default function EarningsPage() {
 
   const [date, setDate] = useState<string>(getToday());
+  const { isOpen, onClose, onOpen } = useModal();
 
   function onDateChange(e: React.ChangeEvent<HTMLInputElement>) {
     setDate(e.target.value);
@@ -30,11 +32,10 @@ export default function EarningsPage() {
         <h2 className="font-bold">Ganancias</h2>
 
         <Button
-          useAsLink
           className="w-fit"
-          href="/dashboard/add"
           variant="primary"
           endIcon={<AiOutlinePlus size={24} />}
+          onClick={onOpen}
         >
           Agregar ganancia
         </Button>
@@ -43,6 +44,9 @@ export default function EarningsPage() {
 
       <Modal
         title="Agregar ganancia"
+        isOpen={isOpen}
+        onClose={onClose}
+        onOpen={onOpen}
         body={
           <form className="flex flex-col gap-4">
             <Input label="Concepto" placeholder="Concepto" />
@@ -59,8 +63,8 @@ export default function EarningsPage() {
         }
         footer={
           <div className="flex justify-end gap-4 w-full">
-            <Button variant="tertiary">Cancelar</Button>
-            <Button>Guardar</Button>
+            <Button onClick={onClose} variant="tertiary">Cancelar</Button>
+            <Button onClick={onClose}>Guardar</Button>
           </div>
         }
       />
