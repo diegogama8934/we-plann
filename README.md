@@ -30,7 +30,9 @@ We plan is a Software solution that let families or partners to organize their f
 
 ## Getting Started
 
-First, run the development server:
+After you clone the project
+
+Run the development server:
 
 ```bash
 npm run dev
@@ -38,9 +40,7 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+In the future, this part will have the steps to setup the database.
 
 ## Learn More
 
@@ -58,10 +58,12 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
 
-### Folder structure
+## Folder structure
+
+The folder structure described in the following are the main folders of the project, they will always exist. In case the project come bigger, this folder structure can change internally. For example, components project can be divided in more folders than the current ones but it never must be deleted.
 
 
-## Components
+### Components
 
 This folder is dedicated to have all components that will be used in the Application.
 
@@ -79,22 +81,32 @@ This folder is dedicated to have all components that will be used in the Applica
 
   For the functional requirements of the products, is needed to use Charts in order to show data in a comfortable UI view. So the project will use Tremor Charts to show that data. **This folder must not be changed**.
 
-## Hooks
+***
 
-When it is complex logic inside components to handle its behavior, the hooks folder can wrap the logic and export it to the component in order to keep the components reading the clearist posible. Some details about the hooks folder.
+### Hooks
 
-- Index.ts
+When it is complex logic inside components to handle its behavior, the hooks folder can wrap the logic and export it to the component in order to keep the components reading the clearist posible.
 
-  An index.ts file will be a direct child of the hooks folder. This file is the responsible to export all the hooks inside the folder. The reason of this is to keep the imporatation in the components only to one place (the index.ts)
+> An index.ts file will be a direct child of the hooks folder. This file is the responsible to export all the hooks inside the folder. The reason of this is to keep the imporatation in the components only to one place (the index.ts)
 
 - useOnWindowResize.ts
 
   This file is used by Tremor Chart to work itself. **This file must not be deleted or modified**
 
-## Interfaces
+***
 
-## Querys
+### Interfaces
 
-## ui
+In order to keep the components and constants with common structure, interfaces folder is dedicated to keep the types in one place and share it along the entire folders of the project. Some details about the interfaces folder:
 
-## Utils
+> As every main folder will work in the project, the file index.ts will be the responsible to export the interfaces along the entire app. This help to keep the importation in constants and components only from one file and if the structure of the folders change the only refactorized file will be that index.ts.
+
+### Querys
+
+***
+
+### UI
+
+***
+
+### Utils
