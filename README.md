@@ -6,12 +6,6 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -58,6 +52,16 @@ This folder is dedicated to have all components that will be used in the Applica
   For the functional requirements of the products, is needed to use Charts in order to show data in a comfortable UI view. So the project will use Tremor Charts to show that data. **This folder must not be changed**.
 
 ## Hooks
+
+When it is complex logic inside components to handle its behavior, the hooks folder can wrap the logic and export it to the component in order to keep the components reading the clearist posible. Some details about the hooks folder.
+
+- Index.ts
+
+  An index.ts file will be a direct child of the hooks folder. This file is the responsible to export all the hooks inside the folder. The reason of this is to keep the imporatation in the components only to one place (the index.ts)
+
+- useOnWindowResize.ts
+
+  This file is used by Tremor Chart to work itself. **This file must not be deleted or modified**
 
 ## Interfaces
 
