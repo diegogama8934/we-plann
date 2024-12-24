@@ -1,4 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# We plan
+
+We plan is a Software solution that let families or partners to organize their finances by taking control the earnings and losses of the money and how they decide to distribute them.
+
+## Technical Tools
+
+- Next JS is the framework used to bootstrap the project.
+
+  [Next JS Documentation](https://nextjs.org)
+
+- Tailwind CSS is the CSS framework used to style the entire application.
+
+  [Tailwind CSS Documentation](https://tailwindcss.com/)
+
+- Typscript is the languaje decided to develop the project.
+
+  [Typescript Documentation](https://www.typescriptlang.org/)
+
+- PostgreSQL will be the database of the project.
+
+  [PostgreSQL Documentation](https://www.postgresql.org/)
+
+- AWS Amplify will be the responsable to the CI/CD process.
+
+  [AWS Amplify Documentation](https://aws.amazon.com/es/amplify)
+
+- Prisma will be the ORM to interact with the database.
+
+  [Prisma Documentation](https://www.prisma.io/)
 
 ## Getting Started
 
