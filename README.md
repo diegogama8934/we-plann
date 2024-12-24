@@ -41,6 +41,22 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ## Components
 
+This folder is dedicated to have all components that will be used in the Application.
+
+> There is an index.ts file that is dedicated to export all the Components of the folder, in order to import all the components from this file when we need someone in the pages or other components.
+
+- Core Components
+
+  Core Components are dedicated to show and have the logic of the ui of the application itself. Core components don´t have to be rendered in landing page, for example, because they are dedicated to build the UI of the core aplication.
+
+- Presentation Components
+
+  Presentation Components are dedicated to show and have the logic of the onboarding section of the product, this must include the components of login and signup.
+
+- Tremor Chart
+
+  For the functional requirements of the products, is needed to use Charts in order to show data in a comfortable UI view. So the project will use Tremor Charts to show that data. **This folder must not be changed**.
+
 ## Hooks
 
 ## Interfaces
