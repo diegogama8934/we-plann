@@ -1,10 +1,9 @@
-# Usa una imagen oficial de Node
+# Usa Node
 FROM node:20-alpine
 
-# Directorio de trabajo dentro del contenedor
 WORKDIR /app
 
-# Copia package.json y package-lock.json
+# Copia solo package.json y lockfile primero
 COPY package*.json ./
 
 # Instala dependencias
@@ -13,8 +12,7 @@ RUN npm install
 # Copia todo el código
 COPY . .
 
-# Expone el puerto de Next.js
+# Expone puerto
 EXPOSE 3000
 
-# Comando por defecto
 CMD ["npm", "run", "dev"]
