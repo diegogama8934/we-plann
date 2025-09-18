@@ -1,38 +1,65 @@
 "use client";
-import { Dropdown } from "@/ui";
-import { Button } from "@mui/material";
-import { AiOutlinePlus } from "react-icons/ai";
+import Link from 'next/link';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { Button, Menu, MenuItem } from "@mui/material";
 import { useState } from "react";
 
 export function HomeQuickActions() {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   return (
     <div className="flex justify-between items-center">
-
       <h2 className="font-bold">Balance de gastos</h2>
 
       <div className="flex gap-4">
-        <Button></Button>
+        <Button
+          id="basic-button"
+          aria-controls={open ? 'basic-menu' : undefined}
+          aria-haspopup="true"
+          aria-expanded={open ? 'true' : undefined}
+          onClick={handleClick}
+          variant="contained"
+          endIcon={<KeyboardArrowDownIcon />}
+        >
+          Movimiento
+        </Button>
 
-        <Dropdown
-          isOpen={isDropdownOpen}
-          trigger={
-            <Button
-              onClick={() => setIsDropdownOpen(prev => !prev)}
-              className="w-fit"
-              endIcon={<AiOutlinePlus size={24} />}
-            >
-              Movimiento
-            </Button>
-          }
-          options={[
-            <Button key={1} className="w-full">Ingreso</Button>,
-            <Button key={2} className="w-full">Gasto</Button>
-          ]}
-        />
+        <Menu
+          id="basic-menu"
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+          MenuListProps={{
+            'aria-labelledby': 'basic-button',
+          }}
+        >
+          <MenuItem
+            component={Link}
+            href="./movements/create"
+            onClick={handleClose}
+            sx={{ color: 'success.main' }}
+          >
+            Ingreso
+          </MenuItem>
+          <MenuItem
+            component={Link}
+            href="./movements/"
+            onClick={handleClose}
+            sx={{ color: 'error.main' }}
+          >
+            Gasto
+          </MenuItem>
+        </Menu>
       </div>
-
     </div>
   );
 }
