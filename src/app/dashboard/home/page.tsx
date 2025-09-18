@@ -1,7 +1,5 @@
 import { Metadata } from "next";
-import { ChartsGrid, HomeQuickActions } from "@/components";
-import { getGeneralData } from "@/querys/getData";
-import { formatGeneralDataToChartsData } from "@/utils";
+import { HomeQuickActions } from "@/components";
 
 export const metadata: Metadata = {
   title: "We plan",
@@ -10,18 +8,10 @@ export const metadata: Metadata = {
 
 export default async function HomePage() {
 
-  const generalData = await getGeneralData();
-
-  const chartsData = formatGeneralDataToChartsData(generalData);
-
   return (
     <div className="flex flex-col p-12 gap-12">
 
       <HomeQuickActions />
-
-      <ChartsGrid
-        initialChartsStructure={chartsData}
-      />
 
     </div>
   );
